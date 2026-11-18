@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Fit-N-Pack: Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <section id="s-title" class="screen">
+      <h1 class="big">Fit-N-Pack</h1>
+      <p class="sub">Fit everything into the bag. From a tiny clutch to a big suitcase.</p>
+
+      <div class="menu">
+        <button class="btn play" id="play" type="button">Play</button>
+        <button class="btn alt" type="button" data-go="lb">Leaderboard</button>
+        <button class="btn alt" type="button" data-go="about">About</button>
+      </div>
+    </section>
+
+    <section id="s-game" class="screen game-screen">
+      <div class="bar">
+        <button class="btn alt small" id="gameBack" type="button">← Menu</button>
+        <span class="timer" id="timer" aria-live="polite"></span>
+        <button class="btn alt small" id="reset" type="button">Restart</button>
+      </div>
+
+      <h2>Pack the clutch</h2>
+
+      <div class="game">
+        <div class="bagwrap">
+          <span class="tagline">CLUTCH</span>
+          <div id="grid" role="grid" aria-label="Bag packing grid"></div>
+        </div>
+
+        <div class="side">
+          <div class="panel">
+            <h2>Your items</h2>
+
+            <div class="prog" role="progressbar" aria-label="Must-pack items" aria-valuemin="0" aria-valuemax="4">
+              <b id="bar"></b>
+            </div>
+
+            <p class="nm" id="reqTxt"></p>
+            <div id="tray" aria-label="Items to pack"></div>
+            <p id="msg" role="status" aria-live="polite"></p>
+            <p class="hint">Select an item, then tap a bag cell to place it. Select a packed item to pick it up. Press R to rotate.</p>
+
+            <div class="row">
+              <button class="btn alt small" id="rot" type="button">Rotate</button>
+              <button class="btn alt small" id="done" type="button" disabled>Finish packing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s-lb" class="screen">
+      <h2>Leaderboard</h2>
+      <p class="sub">No scores yet.</p>
+      <button class="btn alt back" type="button" data-go="title">← Back</button>
+    </section>
+
+    <section id="s-about" class="screen">
+      <h2 class="about-header">About</h2>
+      <p class="overview"><b>Fit-N-Pack</b> is a drag-and-drop game developed by BTLED - ICT - 3A students. The game focuses on fitting everyday essentials/items into a single bag.</p>
+      <h2 class="mechanics-header">Game Mechanics:</h2>
+      <p class="mechanics">In order to fit the everyday essentials, the players must carefully place items (e.g smartphone, lipstick, charger, etc.) into the bag cells before the time runs out.
+      The items labeled with "must" are required to be placed inside. Once finished, click the "Finish Packing" button to finalize your bag. <b>NOTE:</b> Be careful upon placing items because there are unwanted junk/items 
+      around that can reduce your points.</p>
+      <button class="btn alt back" type="button" data-go="title">← Back</button>
+    </section>
+
+    <div id="result" role="dialog" aria-modal="true" aria-labelledby="rTitle" aria-describedby="rText">
+      <div class="box">
+        <div id="stars" aria-label="Result stars"></div>
+        <h2 id="rTitle"></h2>
+        <p id="rText"></p>
+
+        <div class="row center-row">
+          <button class="btn play" id="again" type="button">Play again</button>
+          <button class="btn alt small" id="toMenu" type="button">Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
